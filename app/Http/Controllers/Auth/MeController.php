@@ -19,7 +19,8 @@ class MeController extends Controller
 
         return response()->json([
             'email' => $user->email,
-            'firstname' => $user->firstname
+            'firstname' => $user->firstname,
+            'role' => $user->role
         ]);
     }
 }
