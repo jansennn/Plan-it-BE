@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class SignInController extends Controller
 {
+
 
     public function __invoke(Request $request)
     {
@@ -14,6 +16,9 @@ class SignInController extends Controller
             return response(null, 401);
         }
 
-        return response()->json(compact('token'));
+        $user = User::where('email', '=', $request->email)->first();
+        $role = $user->role;
+
+        return response()->json(['token' => $token, 'role' => $role]);
     }
 }
