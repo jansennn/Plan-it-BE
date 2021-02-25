@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateObjekWisatasTable extends Migration
+class CreateKabupatensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateObjekWisatasTable extends Migration
      */
     public function up()
     {
-        Schema::create('objek_wisatas', function (Blueprint $table) {
+        Schema::create('kabupatens', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateObjekWisatasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('objek_wisatas');
+        Schema::dropIfExists('kabupatens');
     }
 }
