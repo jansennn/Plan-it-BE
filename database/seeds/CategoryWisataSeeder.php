@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
-class CategoryWisataTable extends Seeder
+class CategoryWisataSeeder extends Seeder
 {
     /**
      * Run the database seeds.

@@ -9,4 +9,8 @@ class Destination extends Model
     public function kabupaten(){
         return $this->belongsTo('App\Kabupaten');
     }
+
+    public function category(){
+        return $this->belongsTo('App\CategoryWisata');
+    }
 }

@@ -16,6 +16,7 @@ class CreateDestinationsTable extends Migration
         Schema::create('destinations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('kabupaten_id');
+            $table->unsignedBigInteger('category_wisata_id');
             $table->string('name');
             $table->string('address');
             $table->decimal('rating');
@@ -28,6 +29,7 @@ class CreateDestinationsTable extends Migration
             $table->timestamps();
 
             $table->foreign('kabupaten_id')->references('id')->on('kabupatens');
+            $table->foreign('category_wisata_id')->references('id')->on('category_wisatas');
         });
     }
 
