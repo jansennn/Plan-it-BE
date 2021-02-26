@@ -6,3 +6,5 @@ Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function (){
    Route::post('register', 'RegisterController');
    Route::get('me', 'MeController');
 });
+
+Route::get('inisiasi', 'RutePerjalananController@inisiasi');
