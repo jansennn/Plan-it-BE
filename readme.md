@@ -1,13 +1,9 @@
+#Plan It - Recommender System
+
 ## Run App
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- `php artisan tinker` -> ``
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
+## 1 Setting data on DB
+- Run `php artisan migrate` to make table from migration.
+- Run `php artisan db::seed` to insert data from seeder to table DB.
+- Run `php artisan tinker` -> `factory(App\Destination::class, 20)->create()` to make data from factory
 
