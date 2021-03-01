@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 $factory->define(Destination::class, function (Faker $faker) {
     return [
         'kabupaten_id' => 1,
+        'category_wisata_id' => 2,
         'name' => $faker->name,
         'address' => $faker->address,
         'rating' => 5, // password
