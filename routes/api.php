@@ -7,4 +7,13 @@ Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function (){
    Route::get('me', 'MeController');
 });
 
-Route::get('inisiasi', 'RutePerjalananController@inisiasi');
+Route::group(['prefix' => 'user'], function (){
+    Route::get('inisiasi', 'RutePerjalananController@inisiasi');
+});
+
+Route::group(['prefix' => 'admin'], function (){
+    Route::get('destinasis', 'DestinasiController@index');
+    Route::get('kabupatens', 'KabupatenController@index');
+    Route::get('categoryWisatas', 'CategoryWisata@index');
+});
+
