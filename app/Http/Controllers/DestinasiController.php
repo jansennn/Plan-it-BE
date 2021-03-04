@@ -17,4 +17,24 @@ class DestinasiController extends Controller
 
         return $destinasis;
     }
+
+    public function store(Request $request){
+        $destination = new Destination();
+        $destination->kabupaten_id = $request->kabupaten_id;
+        $destination->category_wisata_id = $request->category_wisata_id;
+        $destination->name = $request->name;
+        $destination->address = $request->address;
+        $destination->rating = $request->rating;
+        $destination->lat = $request->lat;
+        $destination->long = $request->long;
+        $destination->image = $request->image;
+        $destination->opening_hours = $request->opening_hours;
+        $destination->closed_hours = $request->closed_hours;
+        $destination->status = 1;
+
+        if($destination->save()){
+            return response()->json("success add destination", 200);
+        }
+
+    }
 }

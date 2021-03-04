@@ -14,6 +14,9 @@ Route::group(['prefix' => 'user'], function (){
 Route::group(['prefix' => 'admin'], function (){
     Route::get('destinasis', 'DestinasiController@index');
     Route::get('kabupatens', 'KabupatenController@index');
-    Route::get('categoryWisatas', 'CategoryWisata@index');
+    Route::get('categoryWisatas', 'CategoryWisataController@index');
+
+    //add Destination
+    Route::post('destinasi', 'DestinasiController@store');
 });
 
