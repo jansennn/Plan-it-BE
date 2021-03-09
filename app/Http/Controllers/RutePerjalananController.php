@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Destination;
+use App\Temp;
 
 class RutePerjalananController extends Controller
 {
@@ -57,7 +58,32 @@ class RutePerjalananController extends Controller
 
 
 
-    public function mutation(){
+    public function mutation($population, $destination_length){
+        $temp_mutation = Temp::where('id', 2)->first();
+        $temp_cromosom = Temp::where('id', 4)->first();
+        $mutation_chance = $temp_mutation->value;
+        $count_kromosom = $temp_cromosom->value;
 
+        $total_mutation = ($count_kromosom * $mutation_chance) / 100;
+
+        $idx = 0;
+
+        while($idx < $total_mutation){
+            //Pilih secara acak kromosom yang ingin dimutasikan
+            $idxChromosom = rand(0, $count_kromosom);
+
+            //Pilih 2 gen secara acak untuk ditukar
+            $idxGen = rand(1, $destination_length);
+            $randGen = rand(1, $destination_length);
+
+
+            //Tukar posisi kedua gen tersebut
+            $temp = $population[$idxChromosom]['chromosome'][$idxGen];
+            $population[$idxChromosom]['chromosome'][$idxGen] = $population[$idxChromosom]['chromosome'][$randGen];
+            $population[$idxChromosom]['chromosome'][$randGen] = $temp;
+
+            $idx++;
+        }
+        return $population;
     }
 }
