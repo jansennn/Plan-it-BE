@@ -36,6 +36,18 @@ class TempSeeder extends Seeder
                 'value' => 100,
                 'created_at' => Carbon::now('Asia/Jakarta'),
                 'updated_at' => Carbon::now('Asia/Jakarta')
+            ],
+            [
+                'name' => 'mobil',
+                'value' => 60,
+                'created_at' => Carbon::now('Asia/Jakarta'),
+                'updated_at' => Carbon::now('Asia/Jakarta')
+            ],
+            [
+                'name' => 'sepeda_motor',
+                'value' => 40,
+                'created_at' => Carbon::now('Asia/Jakarta'),
+                'updated_at' => Carbon::now('Asia/Jakarta')
             ]
 
         ]);

@@ -22,7 +22,7 @@ class CreateDestinationsTable extends Migration
             $table->decimal('rating');
             $table->string('lat');
             $table->string('long');
-            $table->string('image');
+            $table->string('image', 255);
             $table->string('opening_hours');
             $table->string('closed_hours');
             $table->integer('status');
