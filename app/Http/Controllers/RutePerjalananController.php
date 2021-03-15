@@ -86,4 +86,140 @@ class RutePerjalananController extends Controller
         }
         return $population;
     }
+
+    public function crossover($population, $crossover_rate)
+    {
+
+        $offspring = $population;
+        $change = $crossover_rate * count($population);
+        $idx = 0;
+        while ($idx < $change) {
+            //mencari pasangan induk
+            $prand = rand(0, count($population) - 1);
+            $parent1 = $population[$prand];
+            $prand2 = rand(0, count($population) - 1);
+            $parent2 = $population[$prand2];
+
+            $child1 = $parent1;
+            $child2 = $parent2;
+
+            $totalNode = count($parent1['genes']);
+            $countLockedGened1 = ceil($totalNode / 2);
+            $rand = rand(0, $countLockedGened1 - 1);
+
+            $sama1 = [];
+            $tsama1 = [];
+            $sama2 = [];
+            $tsama2 = [];
+            $path1 = [];
+            $path2 = [];
+
+            for ($i = 0; $i < $totalNode; $i++) {
+                array_push($path1, $parent1['genes'][$i]);
+                if (($i >= $rand) && ($i < $rand + $countLockedGened1)) {
+                    $path1[$i] = $parent2['genes'][$i];
+                } else {
+                    $check = 0;
+                    for ($r = $rand; $r < $rand + $countLockedGened1; $r++) {
+                        if ($parent2['genes'][$r] == $path1[$i]) {
+                            array_push($sama1, $i);
+                            $check = 1;
+                            break;
+                        }
+                    }
+                    if ($check == 0) array_push($tsama1, $i);
+                }
+            }
+            for ($i = 0; $i < $totalNode; $i++) {
+                array_push($path2, $parent2['genes'][$i]);
+                if (($i >= $rand) && ($i < $rand + $countLockedGened1)) {
+                    $path2[$i] = $parent1['genes'][$i];
+                } else {
+                    $check = 0;
+                    for ($r = $rand; $r < $rand + $countLockedGened1; $r++) {
+                        if ($parent1['genes'][$r] == $path2[$i]) {
+                            array_push($sama2, $i);
+                            $check = 1;
+                            break;
+                        }
+                    }
+                    if ($check == 0) array_push($tsama2, $i);
+                }
+            }
+
+            $c1 = count($sama1);
+            $c2 = count($sama2);
+
+
+            $max = max($c1, $c2);
+            if (($c1 != 0) || ($c2 != 0)) {
+                if ($c1 > $c2) {
+                    $c = count($tsama1);
+                    foreach ($tsama2 as $t2) {
+                        if ($c1 == $c2) {
+                            break;
+                        } else {
+                            if ($c == 0) {
+                                array_push($sama2, $t2);
+                                $c2++;
+                            } else {
+                                $check = 0;
+                                for ($i = 0; $i < count($tsama1); $i++) {
+                                    if ($path2[$t2] == $path1[$tsama1[$i]]) {
+                                        array_splice($tsama1, $i, 1);
+                                        $c--;
+                                        $check = 1;
+                                        break;
+                                    }
+                                }
+                                if ($check == 0) {
+                                    array_push($sama2, $t2);
+                                    $c2 = +1;
+                                }
+                            }
+                        }
+                    }
+                } elseif ($c1 < $c2) {
+                    $c = count($tsama2);
+                    foreach ($tsama1 as $t1) {
+                        if ($c1 == $c2) {
+                            break;
+                        } else {
+                            if ($c == 0) {
+                                array_push($sama1, $t1);
+                                $c1++;
+                            } else {
+                                $check = 0;
+                                for ($i = 0; $i < count($tsama2); $i++) {
+                                    if ($path1[$t1] == $path2[$tsama2[$i]]) {
+                                        array_splice($tsama2, $i, 1);
+                                        $c--;
+                                        $check = 1;
+                                        break;
+                                    }
+                                }
+                                if ($check == 0) {
+                                    array_push($sama1, $t1);
+                                    $c1++;
+                                }
+                            }
+                        }
+                    }
+                }
+                for ($i = 0; $i < $max; $i++) {
+                    $path1[$sama1[$i]] = $parent2['genes'][$sama2[$i]];
+                    $path2[$sama2[$i]] = $parent1['genes'][$sama1[$i]];
+                }
+            }
+
+            $child1['genes'] = $path1;
+            $child2['genes'] = $path2;
+
+            array_push($offspring, $child1);
+            array_push($offspring, $child2);
+            $idx++;
+        }
+
+        return $offspring;
+    }
 }
