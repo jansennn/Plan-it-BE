@@ -10,7 +10,8 @@ Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function (){
 Route::group(['prefix' => 'user'], function (){
     Route::get('inisiasi', 'RutePerjalananController@inisiasi');
 
-    //test mutation
+    //test
+    Route::post('testInisiasi', 'RutePerjalananController@inisiasi');
     Route::get('testMutation', 'RutePerjalananController@mutation');
 });
 

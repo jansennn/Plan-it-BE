@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
             CategoryWisataSeeder::class,
             KabupatenSeeder::class,
             UserSeeder::class,
-            TempSeeder::class
+            TempSeeder::class,
+            DestinasiSeeder::class
         ]);
     }
 }
