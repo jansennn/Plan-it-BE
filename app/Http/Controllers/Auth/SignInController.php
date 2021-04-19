@@ -18,7 +18,8 @@ class SignInController extends Controller
 
         $user = User::where('email', '=', $request->email)->first();
         $role = $user->role;
+        $id = $user->id;
 
-        return response()->json(['token' => $token, 'role' => $role]);
+        return response()->json(['token' => $token, 'role' => $role, 'id' => $id]);
     }
 }

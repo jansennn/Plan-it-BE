@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Destination;
 use App\Temp;
+use App\Day;
+use App\Plan;
+use App\RutePerjalananPerDay;
+use App\RutePerjalanan;
 use Illuminate\Http\Request;
 use DatePeriod;
 use DateInterval;
 use DateTime;
-use Carbon\CarbonPeriod;
-use Carbon\Carbon;
-
-
 
 
 class RutePerjalananController extends Controller
@@ -27,6 +27,8 @@ class RutePerjalananController extends Controller
     private $population;
     private $tanggal_awal;
     private $tanggal_akhir;
+    private $name_route_travel;
+    private $range_date;
 
     public function __construct()
     {
@@ -80,6 +82,39 @@ class RutePerjalananController extends Controller
     public function setTanggalAkhir($tanggal){
         $this->tanggal_akhir = $tanggal;
     }
+
+    public function setNameRouteTravel($name){
+        $this->name_route_travel = $name;
+    }
+
+    public function setRangeDate($date){
+        $this->range_date = $date;
+    }
+
+    function getDatesFromRange($start, $end, $format = 'd-m-Y') {
+
+        // Declare an empty array
+        $array = array();
+
+        // Variable that store the date interval
+        // of period 1 day
+        $interval = new DateInterval('P1D');
+
+        $realEnd = new DateTime($end);
+        $realEnd->add($interval);
+
+        $period = new DatePeriod(new DateTime($start), $interval, $realEnd);
+
+        // Use loop to store date into array
+        foreach($period as $date) {
+            $array[] = $date->format($format);
+        }
+
+        // Return the array elements
+        return $array;
+    }
+
+
     public function inisiasi(Request $request)
     {
         //tipe transportasi
@@ -94,7 +129,7 @@ class RutePerjalananController extends Controller
         //set tanggal awal
         $this->setTanggalAwal($request->date[0]);
         //set tanggal akhir
-        $this->setTanggalAwal($request->date[1]);
+        $this->setTanggalAkhir($request->date[1]);
 
         //jumlah kromosom dalam satu generasi
         $temp_cromosom = Temp::where('id', 4)->first();
@@ -115,9 +150,30 @@ class RutePerjalananController extends Controller
         $mutation_chance = $temp_mutation->value;
         $this->setMutationRate($mutation_chance);
 
+        //set name route travel
+        $this->setNameRouteTravel($request->name_route_travel);
+
+        //set range date
+        $Date = $this->getDatesFromRange($request->date[0], $request->date[1]);
+        $this->setRangeDate($Date);
+
+        //save to table plan
+        $plan = new Plan();
+        $plan->user_id = $request->user_id;
+        $plan->name_route_travel = $request->name_route_travel;
+        $plan->count_destination = $request->destination_length;
+        $plan->date = json_encode($request->date);
+        $plan->type_transportation = $request->type_transportation;
+        $plan->category_destination = " ";
+
+        $plan->save();
 
         //untuk testing
-        $category = [1];
+        $category = array();
+        for($i=0 ; $i< count($request->category_wisata); $i++){
+            array_push($category, $request->category_wisata[$i]);
+        }
+
         $destinations = [];
         //untuk testing
 
@@ -161,7 +217,6 @@ class RutePerjalananController extends Controller
     }
 
 
-
     public function mutation($hasil_crossover, $destination_length, $transportation_type){
 
         $mutation = $hasil_crossover;
@@ -186,11 +241,10 @@ class RutePerjalananController extends Controller
 
             $idx++;
         }
-//      return $mutation[$idxChromosom]['chromosome'][5];
-        return $this->seleksi($mutation, $this->population, $destination_length, $transportation_type);
+        return $this->seleksi($mutation, $this->population, $destination_length);
     }
 
-    public function seleksi($mutation, $population, $destination_length, $transportation_type){
+    public function seleksi($mutation, $population, $destination_length){
 
         $transportation_type = $this->transportation_type;
         $arr_pop_mut = $population;
@@ -287,7 +341,6 @@ class RutePerjalananController extends Controller
             array_push($hasil, $arr_pop_mut[$i]);
         }
 
-
         //menset kromosom terbaik pada generasi 0
         if($this->generasi == 0){
             $this->setKromosomTerbaik($hasil[0]);
@@ -308,48 +361,54 @@ class RutePerjalananController extends Controller
             $hasil_algoritma = $this->kromosom_terbaik['chromosome'];
 
 
-//            if(array_key_exists(4, $hasil_algoritma)){
-//                return "haha";
-//            }
-//            if($hasil_algoritma[5] != null){
-//                return $hasil_algoritma[6];
-//            }
-
             $data = [];
             $bagi = $jumlah_destinasi / ($this->count_day+1);
             $bagi = (int)$bagi;
             $idx = 0;
-            return $bagi;
-            for($i=0; $i <= $this->count_day ;$i++){
-                $data[$i] = array();
-                $data[$i]['tanggal'] = "20 Maret 2021";
-                $j = 0;
-                while($idx < $jumlah_destinasi){
-                    $data[$i]['destinasi'][$j] = array();
-                    $data[$i]['destinasi'][$j]['nama_destinasi'] = "haha";
-                    $data[$i]['destinasi'][$j]['gambar'] = "gambar";
-                    $data[$i]['destinasi'][$j]['jarak'] = "jarak";
 
-                    if($idx+1 == $bagi){
-                        break;
-                    }
-                    $idx++;
-                    $j++;
-
-
-                }
-
-//                for($j=0 ; $j<2 ; $j++){
-//                    $data[$i]['destinasi'][$j] = array();
-//                    $data[$i]['destinasi'][$j]['nama_destinasi'] = "haha";
-//                    $data[$i]['destinasi'][$j]['gambar'] = "gambar";
-//                    $data[$i]['destinasi'][$j]['jarak'] = "jarak";
-//                }
-
+            $count = array();
+            for($i=0; $i<$this->count_day+1; $i++){
+                $count[$i] = 0;
             }
 
-            return $data;
+            $pem = $this->destination_length;
+            while($pem != 0){
+                for($i=0; $i<$this->count_day+1; $i++){
+                    if($pem != 0){
+                        $count[$i] = $count[$i] + 1;
+                        $pem--;
+                    }
+                }
+            }
 
+            //save to table rute_perjalanan
+            $temp_des = 0;
+            $data_rute_perjalanan = new RutePerjalanan();
+            $data_rute_perjalanan->user_id = 1;
+            $data_rute_perjalanan->name = $this->name_route_travel;
+            $data_rute_perjalanan->tanggal_awal = $this->tanggal_awal;
+            $data_rute_perjalanan->tanggal_akhir = $this->tanggal_akhir;
+            $data_rute_perjalanan->deskripsi = 1+$this->count_day." days Around Lake Toba";
+            $data_rute_perjalanan->budget = " - ";
+            $data_rute_perjalanan->count_trend = 0;
+            $data_rute_perjalanan->status = 1;
+            if($data_rute_perjalanan->save()){
+                for($i=0; $i<count($count); $i++){
+                    $day = new Day();
+                    $day->rute_perjalanan_id = $data_rute_perjalanan->id;
+                    $day->day = $this->range_date[$i];
+                    if($day->save()){
+                        for($j=0; $j<$count[$i]; $j++){
+                            $rute_perjalanan_per_day = new RutePerjalananPerDay();
+                            $rute_perjalanan_per_day->day_id = $day->id;
+                            $rute_perjalanan_per_day->destination_id = $hasil_algoritma[$temp_des];
+                            $rute_perjalanan_per_day->save();
+                            $temp_des++;
+                        }
+                    }
+                }
+            }
+            return $count;
         }
 
         //jika belum 100 generasi maka akan kembali ke mutation
@@ -519,8 +578,33 @@ class RutePerjalananController extends Controller
             $idx++;
         }
 
-//        return count($offspring);
           return $this->mutation($offspring, $this->destination_length, $this->transportation_type);
     }
+
+
+    public function displayRutePerjalanan($id){
+        $data= RutePerjalanan::where('id', $id)->with('day.rute.destinasi.per_day')->first();
+
+        return $data;
+    }
+
+    public function rutePerjalananUpcomingByUserId($id){
+        $data = RutePerjalanan::where('user_id', $id)->where('status', 1)->get();
+
+        return $data;
+    }
+
+    public function rutePerjalananPastByUserId($id){
+        $data = RutePerjalanan::where('user_id', $id)->where('status', 0)->get();
+
+        return $data;
+    }
+
+    public function trending(){
+        $data = RutePerjalanan::with('user')->orderByDesc('count_trend')->limit(6)->get();
+
+        return $data;
+    }
+
 
 }

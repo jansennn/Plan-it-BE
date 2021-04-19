@@ -13,4 +13,8 @@ class Destination extends Model
     public function category(){
         return $this->belongsTo('App\CategoryWisata');
     }
+
+    public function per_day(){
+        return $this->hasMany('App\RutePerjalananPerDay');
+    }
 }
