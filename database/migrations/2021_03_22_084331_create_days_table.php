@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWisatawansTable extends Migration
+class CreateDaysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateWisatawansTable extends Migration
      */
     public function up()
     {
-        Schema::create('wisatawans', function (Blueprint $table) {
+        Schema::create('days', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('rute_perjalanan_id');
+            $table->string('day');
             $table->timestamps();
+
+            $table->foreign('rute_perjalanan_id')->references('id')->on('rute_perjalanans');
         });
     }
 
@@ -26,6 +30,6 @@ class CreateWisatawansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wisatawans');
+        Schema::dropIfExists('days');
     }
 }

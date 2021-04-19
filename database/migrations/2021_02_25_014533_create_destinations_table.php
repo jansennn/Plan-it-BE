@@ -23,6 +23,7 @@ class CreateDestinationsTable extends Migration
             $table->string('lat');
             $table->string('long');
             $table->string('image', 255);
+            $table->text('deskripsi');
             $table->string('opening_hours');
             $table->string('closed_hours');
             $table->integer('status');

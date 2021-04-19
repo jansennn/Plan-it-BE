@@ -9,11 +9,11 @@ class DestinasiController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth:api']);
+//        $this->middleware(['auth:api']);
     }
 
     public function index(){
-        $destinasis = Destination::select('name', 'address', 'rating', 'lat', 'long', 'image', 'opening_hours', 'closed_hours')->get();
+        $destinasis = Destination::select('id', 'name', 'address', 'rating', 'lat', 'long', 'image', 'opening_hours', 'closed_hours')->get();
 
         return $destinasis;
     }
@@ -36,5 +36,17 @@ class DestinasiController extends Controller
             return response()->json("success add destination", 200);
         }
 
+    }
+
+    public function search($name){
+        $data = Destination::where('name','LIKE', "%{$name}%")->get();
+
+        return "andreas";
+    }
+
+    public function find($id){
+        $data = Destination::find($id);
+
+        return $data;
     }
 }
