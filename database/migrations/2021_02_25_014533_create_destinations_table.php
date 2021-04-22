@@ -19,11 +19,11 @@ class CreateDestinationsTable extends Migration
             $table->unsignedBigInteger('category_wisata_id');
             $table->string('name');
             $table->string('address');
+            $table->text('description');
             $table->decimal('rating');
             $table->string('lat');
             $table->string('long');
             $table->string('image', 255);
-            $table->text('deskripsi');
             $table->string('opening_hours');
             $table->string('closed_hours');
             $table->integer('status');
