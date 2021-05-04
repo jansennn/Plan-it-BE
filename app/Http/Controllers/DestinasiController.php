@@ -13,7 +13,7 @@ class DestinasiController extends Controller
     }
 
     public function index(){
-        $destinasis = Destination::select('id', 'name', 'address', 'rating', 'lat', 'long', 'image','deskripsi' ,'opening_hours', 'closed_hours')->get();
+        $destinasis = Destination::select('id', 'name', 'address', 'rating', 'lat', 'long', 'image','description' ,'opening_hours', 'closed_hours')->get();
 
         return $destinasis;
     }
