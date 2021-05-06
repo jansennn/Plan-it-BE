@@ -29,6 +29,9 @@ class RutePerjalananController extends Controller
     private $tanggal_akhir;
     private $name_route_travel;
     private $range_date;
+    private $hours_in_every_destination;
+    private $time_start;
+    private $speed_transport;
 
     public function __construct()
     {
@@ -89,6 +92,19 @@ class RutePerjalananController extends Controller
 
     public function setRangeDate($date){
         $this->range_date = $date;
+    }
+
+    public function setHoursInEveryDestination($hours){
+        $this->hours_in_every_destination = "0$hours:00";
+    }
+
+    public function setTimeStart($time){
+        $this->time_start = $time;
+    }
+
+    public function setSpeeedTransport(){
+        $data = Temp::where('name', $this->transportation_type)->first();
+        $this->speed_transport = $data->value;
     }
 
     function getDatesFromRange($start, $end, $format = 'd-m-Y') {
@@ -156,6 +172,16 @@ class RutePerjalananController extends Controller
         //set range date
         $Date = $this->getDatesFromRange($request->date[0], $request->date[1]);
         $this->setRangeDate($Date);
+
+        //set hours in every destination
+        $this->setHoursInEveryDestination($request->hours);
+
+        //set time start
+        $this->setTimeStart($request->time_start);
+
+        //set speed transportation type
+        $this->setSpeeedTransport();
+
 
         //save to table plan
         $plan = new Plan();
@@ -276,6 +302,7 @@ class RutePerjalananController extends Controller
                     $long_akhir = $destination_akhir->long;
 
                     $jarak =  $this->getDistanceBetweenPoints($lat_awal, $long_awal, $lat_akhir, $long_akhir);
+                    //return "jarak: ". $jarak . "awal: ".$destination_awal->name . "akhir: ".$destination_akhir->name;
                     $total_jarak = $total_jarak + (int)$jarak;
 
                     //menghitung rating
@@ -383,6 +410,7 @@ class RutePerjalananController extends Controller
 
             //save to table rute_perjalanan
             $temp_des = 0;
+            $penghitung = 0;
             $data_rute_perjalanan = new RutePerjalanan();
             $data_rute_perjalanan->user_id = 1;
             $data_rute_perjalanan->name = $this->name_route_travel;
@@ -398,11 +426,40 @@ class RutePerjalananController extends Controller
                     $day->rute_perjalanan_id = $data_rute_perjalanan->id;
                     $day->day = $this->range_date[$i];
                     if($day->save()){
+                        $times = [];
+                        $jam_mulai_travel = "10:00";
                         for($j=0; $j<$count[$i]; $j++){
+                            $times[] = $jam_mulai_travel;
+                            $times[] = $this->hours_in_every_destination;
+                            $jam_selesai_travel = $this->AddTime($times);
                             $rute_perjalanan_per_day = new RutePerjalananPerDay();
                             $rute_perjalanan_per_day->day_id = $day->id;
+                            $rute_perjalanan_per_day->jam_mulai = $jam_mulai_travel;
+                            $rute_perjalanan_per_day->jam_selesai = $jam_selesai_travel;
                             $rute_perjalanan_per_day->destination_id = $hasil_algoritma[$temp_des];
-                            $rute_perjalanan_per_day->save();
+                            if($rute_perjalanan_per_day->save()){
+                                $jam_mulai_travel = $jam_selesai_travel;
+                                $times = [];
+                                if($penghitung != count($hasil_algoritma)-1){
+                                    $time2 = [];
+                                    $des_awal = Destination::where('id', $hasil_algoritma[$penghitung])->first();
+                                    $lat_awal = $des_awal->lat;
+                                    $long_awal = $des_awal->long;
+                                    $des_akhir = Destination::where('id', $hasil_algoritma[$penghitung+1])->first();
+                                    $lat_akhir = $des_akhir->lat;
+                                    $long_akhir = $des_akhir->long;
+
+                                    $s = $this->getDistanceBetweenPointsWithKilometer($lat_awal, $long_awal, $lat_akhir, $long_akhir);
+                                    $v = $this->speed_transport;
+                                    $t = $s/$v;
+                                    $jam =  $this->convertTime($t);
+                                    $time2[] = $jam_selesai_travel;
+                                    $time2[] = $jam;
+                                    $jam_mulai_travel = $this->AddTime($time2);
+
+                                }
+                            }
+                            $penghitung++;
                             $temp_des++;
                         }
                     }
@@ -417,6 +474,44 @@ class RutePerjalananController extends Controller
             return $this->crossover($hasil, 0.2);
         }
 
+    }
+
+    function AddTime($times) {
+        $minutes = 0; //declare minutes either it gives Notice: Undefined variable
+        // loop throught all the times
+        foreach ($times as $time) {
+            list($hour, $minute) = explode(':', $time);
+            $minutes += $hour * 60;
+            $minutes += $minute;
+        }
+
+        $hours = floor($minutes / 60);
+        $minutes -= $hours * 60;
+
+        // returns the time already formatted
+        return sprintf('%02d:%02d', $hours, $minutes);
+    }
+
+    function convertTime($dec)
+    {
+        // start by converting to seconds
+        $seconds = ($dec * 3600);
+        // we're given hours, so let's get those the easy way
+        $hours = floor($dec);
+        // since we've "calculated" hours, let's remove them from the seconds variable
+        $seconds -= $hours * 3600;
+        // calculate minutes left
+        $minutes = floor($seconds / 60);
+        // remove those from seconds as well
+        $seconds -= $minutes * 60;
+        // return the time formatted HH:MM:SS
+        return $this->lz($hours).":".$this->lz($minutes);
+    }
+
+// lz = leading zero
+    function lz($num)
+    {
+        return (strlen($num) < 2) ? "0{$num}" : $num;
     }
 
     public function getDistanceBetweenPoints($lat1, $long1, $lat2, $long2){
@@ -440,6 +535,29 @@ class RutePerjalananController extends Controller
         $distance = $R * $c;
 
         return $distance;
+    }
+
+    public function getDistanceBetweenPointsWithKilometer($lat1, $long1, $lat2, $long2){
+        $R = 6378137;
+        $dLat = deg2rad($lat2 - $lat1);
+        $dLong = deg2rad($long2 - $long1);
+
+        $a = sin($dLat / 2)
+            *
+            sin($dLat / 2)
+            +
+            cos($this->degreesToRadians($lat1))
+            *
+            cos($this->degreesToRadians($lat1))
+            *
+            sin($dLong / 2)
+            *
+            sin($dLong / 2);
+
+        $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+        $distance = $R * $c;
+
+        return $distance * 0.001;
     }
 
     public function degreesToRadians($degrees){
