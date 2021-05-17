@@ -16,6 +16,8 @@ class CreateRutePerjalananPerDaysTable extends Migration
         Schema::create('rute_perjalanan_per_days', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('day_id');
+            $table->string('jam_mulai');
+            $table->string('jam_selesai');
             $table->unsignedBigInteger('destination_id');
             $table->timestamps();
 
