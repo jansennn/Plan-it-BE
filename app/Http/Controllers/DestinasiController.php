@@ -30,6 +30,7 @@ class DestinasiController extends Controller
         $destination->image = $request->image;
         $destination->opening_hours = $request->opening_hours;
         $destination->closed_hours = $request->closed_hours;
+        $destination->description = $request->description;
         $destination->status = 1;
 
         if($destination->save()){
