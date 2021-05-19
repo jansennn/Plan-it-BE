@@ -13,4 +13,6 @@ class RutePerjalananPerDay extends Model
     public function day(){
         return $this->belongsTo('App\Day');
     }
+
+
 }
