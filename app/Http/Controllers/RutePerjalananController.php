@@ -724,5 +724,14 @@ class RutePerjalananController extends Controller
         return $data;
     }
 
+    public function deleteRutePerjalananById($id){
+        $data = RutePerjalanan::find($id);
+
+        if($data->delete()) {
+            return response('success delete rute perjalanan', 200)
+                ->header('Content-Type', 'text/plain');
+        }
+    }
+
 
 }

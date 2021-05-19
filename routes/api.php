@@ -41,6 +41,8 @@ Route::group(['prefix' => 'user'], function (){
     //TRENDING
     Route::get('rute_perjalanan/trending', 'RutePerjalananController@trending');
 
+    //DELETE RUTE PERJALANAN BY ID
+    Route::delete('rute_perjalanan/{id}', 'RutePerjalananController@deleteRutePerjalananById');
 });
 
 //FUNCTION FOR ADMIN
