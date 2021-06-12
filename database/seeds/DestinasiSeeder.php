@@ -496,7 +496,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 2,
                 "name"=> "Batak Museum",
                 "address"=> "Tomok, Simanindo, Kabupaten Samosir, Sumatera Utara 22395",
                 "description"=> "",
@@ -512,7 +512,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 3,
                 "name"=> "Aek Sipangolu Bakkara",
                 "address"=> "Simangulampe, Bakti Raja, Kabupaten Humbang Hasundutan, Sumatera Utara 22457",
                 "description"=> "",
@@ -528,7 +528,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 8,
                 "name"=> "Air Terjun Janji",
                 "address"=> "Tipang, Bakti Raja, Kabupaten Humbang Hasundutan, Sumatera Utara 22457",
                 "description"=> "",
@@ -544,7 +544,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 8,
                 "name"=> "AIR TERJUN SIGARATTUNG ( Sampuran Na Pitu)",
                 "address"=> "Tomok, Simanindo, Kabupaten Samosir, Sumatera Utara 22395",
                 "description"=> "",
@@ -640,7 +640,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 4,
                 "name"=> "Taman Wisata Kera Sibaganding",
                 "address"=> "Sibaganding, Girsang Sipangan Bolon, Kabupaten Simalungun, Sumatera Utara 21174",
                 "description"=> "",
@@ -656,7 +656,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 5,
                 "name"=> "Bukit Burung",
                 "address"=> "Siboro, Sianjur Mula Mula, Kabupaten Samosir, Sumatera Utara",
                 "description"=> "",
@@ -672,7 +672,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 6,
                 "name"=> "Tugu D.I PANJAITAN",
                 "address"=> "Napitupulu Bagasan, Balige, Kabupaten Toba Samosir, Sumatera Utara",
                 "description"=> "",
@@ -688,7 +688,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 8,
                 "name"=> "Simanimbo Waterfall",
                 "address"=> "Ambar Halim, Pintu Pohan Meranti, Ambar Halim, Pintu Pohan Merant, Kabupaten Toba Samosir, Sumatera Utara 22384",
                 "description"=> "",
@@ -720,7 +720,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 3,
                 "name"=> "Kebun Teh Bahbutong, Sidamanik",
                 "address"=> "Sidamanik, Kabupaten Simalungun, Sumatera Utara 21171",
                 "description"=> "",
@@ -736,7 +736,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 9,
                 "name"=> "Batu Hobon",
                 "address"=> "Sarimarrihit, Sianjur Mula Mula, Kabupaten Samosir, Sumatera Utara 22396",
                 "description"=> "",
@@ -752,7 +752,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 7,
                 "name"=> "Air Terjun Binanga Bolon",
                 "address"=> "Purba Dolok, Purba, Kabupaten Simalungun, Sumatera Utara 21165",
                 "description"=> "",
@@ -768,7 +768,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 10,
                 "name"=> "Batuhoda Beach",
                 "address"=> "Desa, Cinta Dame, Simanindo, Kabupaten Samosir, Sumatera Utara 22395",
                 "description"=> "",
@@ -784,7 +784,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 11,
                 "name"=> "Batu marhosa",
                 "address"=> "Jl. Pulau Samosir, Tomok, Simanindo, Kabupaten Samosir, Sumatera Utara 22395",
                 "description"=> "",
@@ -800,7 +800,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 12,
                 "name"=> "GaBOk",
                 "address"=> "Pangambatan, Merek, Kabupaten Karo, Sumatera Utara 22173",
                 "description"=> "",
@@ -816,7 +816,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 13,
                 "name"=> "Taman Eden 100",
                 "address"=> "Taman eden 100 Lumbanrang, Ps. Lumban Julu, Lumban Julu, Kabupaten Toba Samosir, Sumatera Utara 22386",
                 "description"=> "",
@@ -832,7 +832,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 13,
                 "name"=> "Pulau Tolping",
                 "address"=> "Pulau Samosir, Simanindo, Kabupaten Samosir, Sumatera Utara",
                 "description"=> "",
@@ -848,7 +848,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 14,
                 "name"=> "Pantai Indah Situngkir (PIS)",
                 "address"=> "Toba, Pangururan, Sialanguan, Pangururan, Kabupaten Samosir, Sumatera Utara",
                 "description"=> "",
@@ -864,7 +864,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 8,
                 "name"=> "Air Terjun Sigura-Gura",
                 "address"=> "Halado, Pintu Pohan Merant, Kabupaten Toba Samosir, Sumatera Utara 21274",
                 "description"=> "",
@@ -880,7 +880,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 12,
                 "name"=> "Pantai Kenangan",
                 "address"=> "Jalan Besar Pematang Siantar Tigaras, Tigaras, Dolok Pardamean, Kabupaten Simalungun, Sumatera Utara 21163",
                 "description"=> "",
@@ -895,7 +895,7 @@ class DestinasiSeeder extends Seeder
                 "updated_at"=> Carbon::now('Asia/Jakarta')
             ],
             [
-                "kabupaten_id"=> 1,
+                "kabupaten_id"=> 14,
                 "category_wisata_id"=> 1,
                 "name"=> "Puncak Huta Ginjang",
                 "address"=> "Sitanggor, Muara, Kabupaten Tapanuli Utara, Sumatera Utara 22476",
@@ -911,7 +911,7 @@ class DestinasiSeeder extends Seeder
                 "updated_at"=> Carbon::now('Asia/Jakarta')
             ],
             [
-                "kabupaten_id"=> 1,
+                "kabupaten_id"=> 13,
                 "category_wisata_id"=> 1,
                 "name"=> "Muara Nauli",
                 "address"=> "Hutana Godang, Muara, Kabupaten Tapanuli Utara, Sumatera Utara 22476",
@@ -928,7 +928,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 12,
                 "name"=> "Perkemahan Paropo",
                 "address"=> "Paropo I, Silahi Sabungan, Kabupaten Dairi, Sumatera Utara",
                 "description"=> "",
@@ -944,7 +944,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 10,
                 "name"=> "Danau Sidihoni Samosir",
                 "address"=> "Desa Sidihoni Samosir, Salaon Toba, Ronggur Nihuta, Kabupaten Samosir, Sumatera Utara 22392",
                 "description"=> "",
@@ -960,7 +960,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 12,
                 "name"=> "Kota Balige",
                 "address"=> "Jl. Sm Raja No.6, Napitupulu Bagasan, Balige, Kabupaten Toba Samosir, Sumatera Utara 22311",
                 "description"=> "",
@@ -976,7 +976,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 9,
                 "name"=> "Inna Parapat",
                 "address"=> "Danau Toba, Jl. Marihat No.1, Tiga Raja, Girsang Sipangan Bolon, Kabupaten Simalungun, Sumatera Utara 21174",
                 "description"=> "",
@@ -992,7 +992,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 4,
                 "name"=> "Tugu Toga Aritonang",
                 "address"=> "Desa, Dolok Martumbur, Muara, Kabupaten Tapanuli Utara, Sumatera Utara 22476",
                 "description"=> "",
@@ -1008,7 +1008,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 3,
                 "name"=> "Sigurgur Beach & Restaurant",
                 "address"=> "Unnamed Road, Simarmata, Simanindo, Samosir Regency, North Sumatra 22395",
                 "description"=> "",
@@ -1024,7 +1024,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 3,
                 "name"=> "Dermaga Silalahi",
                 "address"=> "Silalahi II, Silahi Sabungan, Kabupaten Dairi, Sumatera Utara",
                 "description"=> "",
@@ -1040,7 +1040,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 3,
                 "name"=> "Pantai Pasir Putih Parbaba",
                 "address"=> "Situngkir, Pangururan, Kabupaten Samosir, Sumatera Utara 22392",
                 "description"=> "",
@@ -1056,7 +1056,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 3,
                 "name"=> "PENATAPAN PARHALLOW SIGARANTUNG",
                 "address"=> "Tomok, Simanindo, Kabupaten Samosir, Sumatera Utara 22395",
                 "description"=> "",
@@ -1072,7 +1072,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 3,
                 "name"=> "Pusat Informasi Geopark Kaldera Toba Sigulatti",
                 "address"=> "Sigulatti, Sarimarrihit, Sianjur Mula Mula, Kabupaten Samosir, Sumatera Utara 22396",
                 "description"=> "",
@@ -1088,7 +1088,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 3,
                 "name"=> "Batu Maroppa",
                 "address"=> "Tamba Dolok, Sitio-Tio, Kabupaten Samosir, Sumatera Utara 22391",
                 "description"=> "",
@@ -1136,7 +1136,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 8,
                 "name"=> "Air Terjun Siboruon",
                 "address"=> "Siboruon, Balige, Kabupaten Toba Samosir, Sumatera Utara 22312",
                 "description"=> "",
@@ -1152,7 +1152,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 8,
                 "name"=> "Air Terjun Aek Limut",
                 "address"=> "Meranti Utara, Pintu Pohan Merant, Kabupaten Toba Samosir, Sumatera Utara 21274",
                 "description"=> "",
@@ -1168,7 +1168,7 @@ class DestinasiSeeder extends Seeder
             ],
             [
                 "kabupaten_id"=> 1,
-                "category_wisata_id"=> 1,
+                "category_wisata_id"=> 3,
                 "name"=> "Pantai Indah Sipinggan",
                 "address"=> "Danau, Toba, Siantar Sel., Kota Pematang Siantar, Sumatera Utara 22394",
                 "description"=> "",

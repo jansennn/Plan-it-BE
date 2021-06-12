@@ -32,6 +32,8 @@ class RutePerjalananController extends Controller
     private $hours_in_every_destination;
     private $time_start;
     private $speed_transport;
+    private $gambar;
+    private $user_id;
 
     public function __construct()
     {
@@ -107,6 +109,14 @@ class RutePerjalananController extends Controller
         $this->speed_transport = $data->value;
     }
 
+    public function setGambar($gambar){
+        $this->gambar = $gambar;
+    }
+
+    public function setUserId($id){
+        $this->user_id = $id;
+    }
+
     function getDatesFromRange($start, $end, $format = 'd-m-Y') {
 
         // Declare an empty array
@@ -153,7 +163,7 @@ class RutePerjalananController extends Controller
         $this->setCountKromosom($count_kromosom);
 
         //jumlah destinasi dalam satu kromosom
-        $destination_length = $request->destination_length;
+        $destination_length = ($this->count_day + 1) * 2;
         $this->setDestinationLength($destination_length);
 
         //set crossover rate
@@ -182,12 +192,16 @@ class RutePerjalananController extends Controller
         //set speed transportation type
         $this->setSpeeedTransport();
 
+        //set gambar
+        $this->setGambar($request->gambar);
+
+        $this->setUserId($request->user_id);
 
         //save to table plan
         $plan = new Plan();
         $plan->user_id = $request->user_id;
         $plan->name_route_travel = $request->name_route_travel;
-        $plan->count_destination = $request->destination_length;
+        $plan->count_destination = $this->destination_length;
         $plan->date = json_encode($request->date);
         $plan->type_transportation = $request->type_transportation;
         $plan->category_destination = " ";
@@ -412,13 +426,14 @@ class RutePerjalananController extends Controller
             $temp_des = 0;
             $penghitung = 0;
             $data_rute_perjalanan = new RutePerjalanan();
-            $data_rute_perjalanan->user_id = 1;
+            $data_rute_perjalanan->user_id = $this->user_id;
             $data_rute_perjalanan->name = $this->name_route_travel;
             $data_rute_perjalanan->tanggal_awal = $this->tanggal_awal;
             $data_rute_perjalanan->tanggal_akhir = $this->tanggal_akhir;
             $data_rute_perjalanan->deskripsi = 1+$this->count_day." days Around Lake Toba";
             $data_rute_perjalanan->budget = " - ";
             $data_rute_perjalanan->count_trend = 0;
+            $data_rute_perjalanan->gambar = $this->gambar;
             $data_rute_perjalanan->status = 1;
             if($data_rute_perjalanan->save()){
                 for($i=0; $i<count($count); $i++){
