@@ -33,7 +33,7 @@ Route::group(['prefix' => 'user'], function (){
     Route::get('rute_perjalanan_past/{id}', 'RutePerjalananController@rutePerjalananPastByUserId');
 
     //SEATCH DESTINATION
-    Route::get('search_destination/{name}', 'DestinasiController@search');
+    Route::get('search_destination/{q}', 'DestinasiController@search');
 
     //INPUT BUDGET
     Route::post('rute_perjalanan/input_budget/{id}', 'InputBudgetController@inputBudget');

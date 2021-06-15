@@ -20,6 +20,7 @@ class CreateRutePerjalanansTable extends Migration
             $table->string('tanggal_awal');
             $table->string('tanggal_akhir');
             $table->string('deskripsi');
+            $table->text('gambar');
             $table->string('budget');
             $table->integer('count_trend');
             $table->integer('status');

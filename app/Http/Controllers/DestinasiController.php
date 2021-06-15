@@ -39,10 +39,12 @@ class DestinasiController extends Controller
 
     }
 
-    public function search($name){
-        $data = Destination::where('name','LIKE', "%{$name}%")->get();
+    public function search($q){
+        $data = Destination::where('name','LIKE', "%{$q}%")
+            ->orWhere('name','LIKE', "{$q}%")
+            ->orWhere('name','LIKE', "%{$q}")->get();
 
-        return "andreas";
+        return $data;
     }
 
     public function find($id){

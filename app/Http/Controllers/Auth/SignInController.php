@@ -9,7 +9,6 @@ use App\User;
 class SignInController extends Controller
 {
 
-
     public function __invoke(Request $request)
     {
         if(!$token = auth()->attempt($request->only('email', 'password'))){
@@ -19,7 +18,8 @@ class SignInController extends Controller
         $user = User::where('email', '=', $request->email)->first();
         $role = $user->role;
         $id = $user->id;
+        $name = $user->firstname;
 
-        return response()->json(['token' => $token, 'role' => $role, 'id' => $id]);
+        return response()->json(['token' => $token, 'role' => $role, 'id' => $id, 'name' => $name]);
     }
 }
