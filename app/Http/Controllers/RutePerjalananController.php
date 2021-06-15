@@ -143,19 +143,22 @@ class RutePerjalananController extends Controller
 
     public function inisiasi(Request $request)
     {
+        $s = explode(":", $request->date_start);
+
         //tipe transportasi
         $transportation_type = $request->type_transportation;
         $this->setTransportationType($transportation_type);
 
         //jumlah hari dari rentang tanggal
-        $tanggal_awal = strtotime($request->date[0]);
-        $tanggal_akhir = strtotime($request->date[1]);
+        $tanggal_awal = strtotime($s[0]);
+        $tanggal_akhir = strtotime($request->date_end);
         $datediff = $tanggal_akhir - $tanggal_awal;
+
         $this->setCountDay(round($datediff / (60 * 60 * 24)));
         //set tanggal awal
-        $this->setTanggalAwal($request->date[0]);
+        $this->setTanggalAwal($s[0]);
         //set tanggal akhir
-        $this->setTanggalAkhir($request->date[1]);
+        $this->setTanggalAkhir($request->date_end);
 
         //jumlah kromosom dalam satu generasi
         $temp_cromosom = Temp::where('id', 4)->first();
@@ -180,14 +183,14 @@ class RutePerjalananController extends Controller
         $this->setNameRouteTravel($request->name_route_travel);
 
         //set range date
-        $Date = $this->getDatesFromRange($request->date[0], $request->date[1]);
+        $Date = $this->getDatesFromRange($s[0], $request->date_end);
         $this->setRangeDate($Date);
 
         //set hours in every destination
         $this->setHoursInEveryDestination($request->hours);
 
         //set time start
-        $this->setTimeStart($request->time_start);
+        $this->setTimeStart($s[1]);
 
         //set speed transportation type
         $this->setSpeeedTransport();
