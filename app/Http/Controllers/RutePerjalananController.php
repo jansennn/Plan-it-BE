@@ -34,11 +34,14 @@ class RutePerjalananController extends Controller
     private $speed_transport;
     private $gambar;
     private $user_id;
+    private $lat;
+    private $long;
 
     public function __construct()
     {
 //        $this->middleware(['auth:api']);
     }
+
 
     public function setPlusGenerasi(){
         $this->generasi = $this->generasi + 1;
@@ -143,19 +146,20 @@ class RutePerjalananController extends Controller
 
     public function inisiasi(Request $request)
     {
+        $s = explode(":", $request->date_start);
         //tipe transportasi
         $transportation_type = $request->type_transportation;
         $this->setTransportationType($transportation_type);
 
         //jumlah hari dari rentang tanggal
-        $tanggal_awal = strtotime($request->date[0]);
-        $tanggal_akhir = strtotime($request->date[1]);
+        $tanggal_awal = strtotime($s[0]);
+        $tanggal_akhir = strtotime($request->date_end);
         $datediff = $tanggal_akhir - $tanggal_awal;
         $this->setCountDay(round($datediff / (60 * 60 * 24)));
         //set tanggal awal
-        $this->setTanggalAwal($request->date[0]);
+        $this->setTanggalAwal($s[0]);
         //set tanggal akhir
-        $this->setTanggalAkhir($request->date[1]);
+        $this->setTanggalAkhir($request->date_end);
 
         //jumlah kromosom dalam satu generasi
         $temp_cromosom = Temp::where('id', 4)->first();
@@ -165,6 +169,10 @@ class RutePerjalananController extends Controller
         //jumlah destinasi dalam satu kromosom
         $destination_length = ($this->count_day + 1) * 2;
         $this->setDestinationLength($destination_length);
+
+        //set longitude & latitude
+        $this->long = $request->long;
+        $this->lat = $request->lat;
 
         //set crossover rate
         $temp_crossover = Temp::where('id', 1)->first();
@@ -180,14 +188,14 @@ class RutePerjalananController extends Controller
         $this->setNameRouteTravel($request->name_route_travel);
 
         //set range date
-        $Date = $this->getDatesFromRange($request->date[0], $request->date[1]);
+        $Date = $this->getDatesFromRange($s[0], $request->date_end);
         $this->setRangeDate($Date);
 
         //set hours in every destination
         $this->setHoursInEveryDestination($request->hours);
 
         //set time start
-        $this->setTimeStart($request->time_start);
+        $this->setTimeStart($s[1]);
 
         //set speed transportation type
         $this->setSpeeedTransport();
@@ -232,9 +240,25 @@ class RutePerjalananController extends Controller
 
             //mengambil 7 value pertama dari destination yang telah di acak
             $chromosome = [];
+            $jarak_terkecil = 0;
+            $idx_terdekat=0;
             for ($j = 0; $j < $destination_length; $j++) {
+                if($j==0){
+                    $destination_awal = Destination::where('id', $destinations[$j])->first();
+                    $jarak_terkecil = $this->getDistanceBetweenPoints($this->lat, $this->long, $destination_awal->lat, $destination_awal->long);
+                }else {
+                    $destination_awal = Destination::where('id', $destinations[$j])->first();
+                    $jarak = $this->getDistanceBetweenPoints($this->lat, $this->long, $destination_awal->lat, $destination_awal->long);
+                    if($jarak_terkecil>$jarak){
+                        $jarak_terkecil = $jarak;
+                        $idx_terdekat = $j;
+                    }
+                }
                 $chromosome[$j] = $destinations[$j];
             }
+            $temp = $chromosome[0];
+            $chromosome[0] = $chromosome[$idx_terdekat];
+            $chromosome[$idx_terdekat] = $temp;
 
             //proses menampung kromosom, inisialisasi jarak tempuh, durasi perjalanan, rating, dan fitness
             $population[$i] = array();
