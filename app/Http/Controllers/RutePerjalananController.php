@@ -670,7 +670,9 @@ class RutePerjalananController extends Controller
             if (($c1 != 0) || ($c2 != 0)) {
                 if ($c1 > $c2) {
                     $c = count($tsama1);
-                    foreach ($tsama2 as $t2) {
+                    for($k=count($tsama2)-1;$k>=0;$k--){
+                        $t2 = $tsama2[$k];
+//                    foreach ($tsama2 as $t2) {
                         if ($c1 == $c2) {
                             break;
                         } else {
@@ -688,7 +690,11 @@ class RutePerjalananController extends Controller
                                     }
                                 }
                                 if ($check == 0) {
-                                    array_push($sama2, $t2);
+                                    if($t2==0){
+                                        array_unshift($sama2,$t2);
+                                    }else{
+                                        array_push($sama2, $t2);
+                                    }
                                     $c2 = +1;
                                 }
                             }
@@ -696,7 +702,9 @@ class RutePerjalananController extends Controller
                     }
                 } elseif ($c1 < $c2) {
                     $c = count($tsama2);
-                    foreach ($tsama1 as $t1) {
+                    for($k=count($tsama1)-1;$k>=0;$k--){
+//                    foreach ($tsama1 as $t1) {
+                        $t1 = $tsama1[$k];
                         if ($c1 == $c2) {
                             break;
                         } else {
@@ -714,7 +722,11 @@ class RutePerjalananController extends Controller
                                     }
                                 }
                                 if ($check == 0) {
-                                    array_push($sama1, $t1);
+                                    if($t1==0){
+                                        array_unshift($sama1,$t1);
+                                    }else{
+                                        array_push($sama1, $t1);
+                                    }
                                     $c1++;
                                 }
                             }
