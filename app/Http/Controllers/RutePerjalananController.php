@@ -155,6 +155,7 @@ class RutePerjalananController extends Controller
         $tanggal_awal = strtotime($s[0]);
         $tanggal_akhir = strtotime($request->date_end);
         $datediff = $tanggal_akhir - $tanggal_awal;
+
         $this->setCountDay(round($datediff / (60 * 60 * 24)));
         //set tanggal awal
         $this->setTanggalAwal($s[0]);
