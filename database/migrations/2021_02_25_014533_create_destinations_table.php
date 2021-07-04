@@ -29,8 +29,8 @@ class CreateDestinationsTable extends Migration
             $table->integer('status');
             $table->timestamps();
 
-            $table->foreign('kabupaten_id')->references('id')->on('kabupatens');
-            $table->foreign('category_wisata_id')->references('id')->on('category_wisatas');
+             $table->foreign('kabupaten_id')->references('id')->on('kabupatens');
+             $table->foreign('category_wisata_id')->references('id')->on('category_wisatas');
         });
     }
 
