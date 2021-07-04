@@ -44,7 +44,7 @@ class CategoryWisataSeeder extends Seeder
                 'updated_at' => Carbon::now('Asia/Jakarta')
             ],
             [
-                'name' => 'Wisata Alam',
+                'name' => 'Wisata Budaya',
                 'created_at' => Carbon::now('Asia/Jakarta'),
                 'updated_at' => Carbon::now('Asia/Jakarta')
             ],
@@ -84,7 +84,7 @@ class CategoryWisataSeeder extends Seeder
                 'updated_at' => Carbon::now('Asia/Jakarta')
             ],
             [
-                'name' => 'Tempat Ibadah',
+                'name' => 'Tempat Ibadah, Ritual, atau Keagamaan',
                 'created_at' => Carbon::now('Asia/Jakarta'),
                 'updated_at' => Carbon::now('Asia/Jakarta')
             ],
@@ -100,6 +100,11 @@ class CategoryWisataSeeder extends Seeder
             ],
             [
                 'name' => 'Wisata Outdoor',
+                'created_at' => Carbon::now('Asia/Jakarta'),
+                'updated_at' => Carbon::now('Asia/Jakarta')
+            ],
+            [
+                'name' => 'Tempat Sejarah',
                 'created_at' => Carbon::now('Asia/Jakarta'),
                 'updated_at' => Carbon::now('Asia/Jakarta')
             ],
