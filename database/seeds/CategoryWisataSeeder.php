@@ -54,7 +54,7 @@ class CategoryWisataSeeder extends Seeder
                 'updated_at' => Carbon::now('Asia/Jakarta')
             ],
             [
-                'name' => 'Kuliner',
+                'name' => 'Cafe & Resto',
                 'created_at' => Carbon::now('Asia/Jakarta'),
                 'updated_at' => Carbon::now('Asia/Jakarta')
             ],

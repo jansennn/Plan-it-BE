@@ -156,6 +156,7 @@ class RutePerjalananController extends Controller
         $tanggal_akhir = strtotime($request->date_end);
         $datediff = $tanggal_akhir - $tanggal_awal;
 
+
         $this->setCountDay(round($datediff / (60 * 60 * 24)));
         //set tanggal awal
         $this->setTanggalAwal($s[0]);
@@ -211,7 +212,7 @@ class RutePerjalananController extends Controller
         $plan->user_id = $request->user_id;
         $plan->name_route_travel = $request->name_route_travel;
         $plan->count_destination = $this->destination_length;
-        $plan->date = json_encode($request->date);
+        $plan->date = $this->tanggal_awal . " - ". $this->tanggal_akhir;
         $plan->type_transportation = $request->type_transportation;
         $plan->category_destination = " ";
 
@@ -222,6 +223,7 @@ class RutePerjalananController extends Controller
         for($i=0 ; $i< count($request->category_wisata); $i++){
             array_push($category, $request->category_wisata[$i]);
         }
+
 
         $destinations = [];
         //untuk testing
@@ -234,6 +236,8 @@ class RutePerjalananController extends Controller
                 array_push($destinations, $d['id']);
             }
         }
+
+
         //mengisi kromosom kromosom ke dalam populasi
         for ($i = 0; $i < $count_kromosom; $i++) {
             //mengacak posisi destinasi destinasi
@@ -271,6 +275,7 @@ class RutePerjalananController extends Controller
         }
 
         //set populasi
+        return $population;
         $this->setPopulation($population);
 
         return $this->crossover($this->population, 0.2);
