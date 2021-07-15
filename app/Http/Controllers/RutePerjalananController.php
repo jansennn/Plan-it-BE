@@ -8,6 +8,7 @@ use App\Day;
 use App\Plan;
 use App\RutePerjalananPerDay;
 use App\RutePerjalanan;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DatePeriod;
 use DateInterval;
@@ -789,6 +790,18 @@ class RutePerjalananController extends Controller
                 ->header('Content-Type', 'text/plain');
         }
     }
-
-
+    public function updateRutePerjalanan($id){
+        foreach (RutePerjalanan::where([['user_id', $id],['status', 1]])->get() as $item) {
+            $akhir = strtotime($item->tanggal_akhir);
+            $sekarang = strtotime(Carbon::now('Asia/Jakarta')->format('d-m-Y'));
+            $datediff = $akhir - $sekarang;
+            if ($datediff < 0) {
+                $rute_u = RutePerjalanan::find($item->id);
+                $rute_u->status = 0;
+                $rute_u->update();
+            }
+        }
+        return response('Rute perjalanan is updated', 200)
+            ->header('Content-Type', 'text/plain');
+    }
 }

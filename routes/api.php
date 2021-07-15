@@ -43,6 +43,9 @@ Route::group(['prefix' => 'user'], function (){
 
     //DELETE RUTE PERJALANAN BY ID
     Route::delete('rute_perjalanan/{id}', 'RutePerjalananController@deleteRutePerjalananById');
+
+    //UPDATE RUTE PERJALANAN REALTIME
+    Route::get('rute_perjalanan_update/{id}', 'RutePerjalananController@updateRutePerjalanan');
 });
 
 //FUNCTION FOR ADMIN
