@@ -237,7 +237,6 @@ class RutePerjalananController extends Controller
             }
         }
 
-
         //mengisi kromosom kromosom ke dalam populasi
         for ($i = 0; $i < $count_kromosom; $i++) {
             //mengacak posisi destinasi destinasi
@@ -254,6 +253,7 @@ class RutePerjalananController extends Controller
                 }else {
                     $destination_awal = Destination::where('id', $destinations[$j])->first();
                     $jarak = $this->getDistanceBetweenPoints($this->lat, $this->long, $destination_awal->lat, $destination_awal->long);
+
                     if($jarak_terkecil>$jarak){
                         $jarak_terkecil = $jarak;
                         $idx_terdekat = $j;
@@ -265,6 +265,7 @@ class RutePerjalananController extends Controller
             $chromosome[0] = $chromosome[$idx_terdekat];
             $chromosome[$idx_terdekat] = $temp;
 
+
             //proses menampung kromosom, inisialisasi jarak tempuh, durasi perjalanan, rating, dan fitness
             $population[$i] = array();
             $population[$i]['chromosome'] = $chromosome;
@@ -273,9 +274,7 @@ class RutePerjalananController extends Controller
             $population[$i]['rating'] = 0;
             $population[$i]['fitness'] = 0;
         }
-
         //set populasi
-        return $population;
         $this->setPopulation($population);
 
         return $this->crossover($this->population, 0.2);
@@ -407,6 +406,7 @@ class RutePerjalananController extends Controller
                 }
             }
         }
+        return $arr_pop_mut;
         $hasil = [];
         for($i=0; $i< 20; $i++){
             array_push($hasil, $arr_pop_mut[$i]);
@@ -758,7 +758,7 @@ class RutePerjalananController extends Controller
 
 
     public function displayRutePerjalanan($id){
-        $data= RutePerjalanan::where('id', $id)->with('day.rute.destinasi.per_day')->first();
+        $data= RutePerjalanan::where('id', $id)->with('day.rute.destinasi.category')->first();
 
         return $data;
     }

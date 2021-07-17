@@ -1366,7 +1366,7 @@ class DestinasiSeeder extends Seeder
                 "description"=> "",
                 "rating"=> 4.8,
                 "lat"=> "2.280912",
-                "long"=> "99.0819914,15",
+                "long"=> "99.081991415",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipPAEDDg_oLyxDaelFP82jLskrdMErONu3_-uQC5=w408-h725-k-no",
                 "opening_hours"=> 6,
                 "closed_hours"=> 18,
@@ -1390,6 +1390,7 @@ class DestinasiSeeder extends Seeder
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
             ],
+
             [
                 "kabupaten_id"=> 1,
                 "category_wisata_id"=> 3,
@@ -1598,6 +1599,7 @@ class DestinasiSeeder extends Seeder
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
             ],
+
             [
                 "kabupaten_id"=> 1,
                 "category_wisata_id"=> 8,
@@ -1727,6 +1729,7 @@ class DestinasiSeeder extends Seeder
                 "updated_at"=> Carbon::now('Asia/Jakarta')
             ],
 
+//ini ya
 //            [
 //                'category_wisata_id' => 1,
 //                'kabupaten_id' => 2,
