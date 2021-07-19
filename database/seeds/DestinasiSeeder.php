@@ -73,7 +73,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.93699099999999",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipOb_aQJ5-nv-sXcBLUwbAT-UlK37LmfRd5l662q=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -89,7 +89,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.84868089999999",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMSLSGUEoLy4Jue9gbf7ULTdXWwjMUbJffSfumh=w408-h272-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -105,7 +105,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.64080930000002",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipO2r385Kl9-Y_rzUBEsTXJI_8GTLtivTnHcJxnq=w408-h306-k-no",
                 "opening_hours"=> 6,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -121,7 +121,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.7095789",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMeIpbQR9Z6HH-4YFLxmrDtU_5A1hZYm6DOeqAK=w408-h272-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -137,7 +137,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.7371039",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipNlpGS0h23jNwUZDSoNzXf_lRVatkJYuOr98V_R=w426-h240-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -185,7 +185,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.6683097",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipN764Zuv5lw-ddqPnu81kNx_DhdZQvTg7pX7cez=w408-h544-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -217,7 +217,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.5226706",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipO7a5zF-UdKJWFIftRsv-DIcerTXqdQ0xtlzl_e=w408-h271-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -233,7 +233,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.86384570000001",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipPSMLo9zehSGfaRop_BNk6bKiKwN1Vg95_puB8d=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -249,7 +249,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.8059596",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipNuU4fNavi6cXCLO71RPM2qRtQJ4pdEGyXLaNhO=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -265,7 +265,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.98832379999999",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipNyjJO1Ebvbw2SKAPJpPvg6_41g3-8u08tisJif=w426-h240-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -281,7 +281,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.04467059999999",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipOGCgFaDzq9rXAGWtEHWAY31V7ZwKU4wePCrhRy=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -297,7 +297,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.6463086",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMVGED7rRKmA_lShrLVUQkpT2e8x8xLkOFYyAeC=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -313,7 +313,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.0184183",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipNEpME1sz0awD0vHrUV45_m8sOx-JNs7H6kyMNH=w408-h564-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -345,7 +345,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.5116903",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMHhzqp_jqk51FXxAb0timsKo1eFjW7s7qFbU2l=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -361,7 +361,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.9383338",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipNye_BTe-DufdVPjvezbmvEfNK6REnMbOtbpfrn=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -409,7 +409,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.8083073",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipPWjU46SQihl35pEKGSuHW-DBmOZWTLSQc1bQqX=w426-h240-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -441,7 +441,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.07737639999999",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipOcWfrx0790mF6DIPP8774GxElrWLLbLoDyFD2J=w408-h272-k-no",
                 "opening_hours"=> 6,
-                "closed_hours"=> 21.3,
+                "closed_hours"=> 21,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -473,7 +473,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.5271691",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipP6J4jYNIqZPSttxLr8u0ucuVPD-xc9BvVvYQZh=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -521,7 +521,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.8169822",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMMlFH8hjwvDiakhvEYVR8Fn0K6f8DO6aqqfNVi=w408-h725-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -537,7 +537,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.86384570000001",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMMcd7ZpK5kybAe90U4yNec4AqZWjFBF4cNEEOq=w408-h544-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -553,7 +553,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.8616401",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipPEss-CJCpUp92ZwF_Yb7GuOsKXvLPB6uTaI5pL=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -585,7 +585,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.0211813",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMuyXAkmzdFnU6bGBZ_NeIKkCpUVas-HNeUJMpp=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -601,7 +601,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.9742237",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMmf_8OmDrhVQ5HOtZJSjlBzLUcGsxtRsN8cEF4=w408-h544-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -617,7 +617,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.7509865",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipNk_9bBP20sXhnr62i9B4LhtTN7aLO1hITPcOg0=w426-h240-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -649,7 +649,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.6463086",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMHmGPchjKU5CAhHvtu0qLTTUIhqfZGe8jcW0hS=w426-h240-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -665,7 +665,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.06609329999999",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipP_brEwCdUCu_F2jGVLYIoN9Fn-zMu9aueuvSaL=w408-h271-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -745,7 +745,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.7233402",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMqZBkVvvDWGvXApJqQhePEYVeNFdTgd0E1Sqyu=w408-h544-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -777,7 +777,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.86740429999999",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipO6XSc0DhGlVbJ2bdEPoBeLxVlUGZHTqOIhsdK-=w451-h240-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -793,7 +793,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.49796719999999",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipPs-0XJenDrQXzeJ_ZMaWeAufvE7JLlPctAk-fq=w426-h240-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -841,7 +841,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.6897135",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMVbdUrQRJg_4ksWVBISqFtn2rN5TBk23WA4Vuy=w426-h240-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -857,7 +857,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.2979641",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipNYwkglaRaXMzS16dEsjqS44DBWSX-bpNGptzNt=w426-h240-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -873,7 +873,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.7905461",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipNZJazATaVhxjm1xLLlqh72ugQnBrGTknsnOM_M=w408-h306-k-no",
                 "opening_hours"=> 7,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -889,7 +889,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.9631789",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipP_xho3baz0qbrvhunjBxLFqQZQ_qywtjLiGZxq=w408-h271-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -905,7 +905,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.9107373",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMGKTewKWirdSp8N7epYJ27l8KZHrJ91J-cZm9p=w425-h240-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -921,7 +921,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.5271691",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipM3Gtbq4RNlX66TsHhnLTa0G1PY1NOZASOi0qaZ=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -937,7 +937,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.74476399999999",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipOg80TKtKT8PQJB6TTimKtS4Em5cDR-_fjDHms=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -953,7 +953,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.0647091",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipO7ZnzZsQHIG1r90UHUKAsxhMKtP2g42wXtSoo=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -969,7 +969,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.930444",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipOpIu1PToREK_gsrYi_AtSSv-u1I2xuiuafeABt=w408-h272-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1017,7 +1017,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.56111419999999",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipOmUL6D_NX1sHtFAAqq2mKoOJafEgk1h1WgVX3F=w426-h240-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1033,7 +1033,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.6985716",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipNEtj4Ag-OURYH5hegKT975sNH13ZeewZZ2kMey=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1081,7 +1081,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.7205877",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMxdTw-eaKvTKhK5o2i03JY3wu7qnYJX8OWw8Ly=w426-h240-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1161,7 +1161,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.08444809999999",
                 "image"=> "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=dJYZ7BM27srODmoVj6oF5w&cb_client=search.gws-prod.gps&w=408&h=240&yaw=181.93112&pitch=0&thumbfov=100",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1177,7 +1177,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.0515805",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipM-Bb3EtNNfJIXdxvLEMUhBm2GjuLTLugjL87M=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1209,7 +1209,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.49522280000001",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipM9c_FOYoa_WLR-Ddzlt8EWUUpMxhgA-UUiggPV=w408-h741-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1225,7 +1225,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.5271691",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipPmVB_dUJG2cMdH8KB1khEFl7Y44sjn3Txrisj8=w408-h271-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1241,7 +1241,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.5029702",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipM54pJJe4ASetMqxQ6vP8Qk6OA4_QXQ0_tnl8MR=w408-h725-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1257,7 +1257,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.8593015",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipPkIA6UmELmLPqjWUdzKH9UdsMLMV4WVurnEccN=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1273,7 +1273,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.50700049999999",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipNneS9fJ1pXls9wwnUIrL84V8sSppC_JqCc28d0=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1289,7 +1289,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.7068269",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipM0-RlNzq-Z2uXfUgJ6YdoF5nWrQE-UqlTBPI3z=w408-h305-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1321,7 +1321,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.7013233",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMOk9hZSdbO_MxzsqP96tAwn34JVc0piJsUa_Kd=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1337,7 +1337,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.7054509",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipNphzPpLt6TMtAkAMen451Dmrc39Cv7SivLcHPV=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1353,7 +1353,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.9989316",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipPFz7OcOkoS3AljYpCL3ZyfGtL_521fTpKcBAA=w408-h305-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1434,7 +1434,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.0272821",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipNY1gwxDVyYV8bAFwNb5Hf7u9_cOaOtuIJAnEBZ=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1466,7 +1466,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.11758",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMIS7O2aimhOw1moisuYoi0P19_4DD1XzmaRsbN=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1482,7 +1482,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.0761289",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMcrzV4E2TmNKYz8QEqEIjuX_b2stSZM2HJt0c1=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1530,7 +1530,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.0644844",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipNepidZEaBefcHVEX8aOmj_4NhCfdo7HIBCcTOv=w426-h240-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1546,7 +1546,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.3041489",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipPIjuMC5pihPCsbnmkV0dtXbpgqTAktPxEFVPIt=w408-h249-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1562,7 +1562,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.0357277",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipN1FQml_iNWLw_pZFoUIqr8HHYWCoBgYN6FlZKY=s451-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1578,7 +1578,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.9213241",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMdOO6VHxKeqKlKxirkyt9FQv7kOm0dTiD6bSaA=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1594,7 +1594,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.9494802",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMGWqpNCBQT6NhCQDWlAbRjQQTQFBxkqDVHM-FD=w408-h544-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1611,7 +1611,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.9272717",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMDaflnVJFIWoAtmFI1RGt3U0npfKAin_meaXLX=w520-h240-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1627,7 +1627,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "98.7633461",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipOvmDjBVLM8JVbKGsI5TGCPCO_t5lRUhUVIQ7tt=w408-h544-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1643,7 +1643,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.0825937",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipPLZaxmaJ4I_5_GrByOI52FQZSCwhECn4F_sh7T=w408-h306-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
@@ -1675,7 +1675,7 @@ class DestinasiSeeder extends Seeder
                 "long"=> "99.0373663",
                 "image"=> "https://lh5.googleusercontent.com/p/AF1QipMeuwJAwcwsJX1juoiZxyjq6_uhHuivJhDNk5zz=w426-h240-k-no",
                 "opening_hours"=> 0,
-                "closed_hours"=> 0,
+                "closed_hours"=> 24,
                 "status"=> 1,
                 "created_at"=> Carbon::now('Asia/Jakarta'),
                 "updated_at"=> Carbon::now('Asia/Jakarta')
