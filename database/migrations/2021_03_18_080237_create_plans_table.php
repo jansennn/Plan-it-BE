@@ -17,10 +17,16 @@ class CreatePlansTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('name_route_travel');
-            $table->integer('count_destination');
-            $table->string('date');
+            $table->string('category_wisata');
             $table->string('type_transportation');
-            $table->string('category_destination');
+            $table->string('date_start');
+            $table->string('date_end');
+            $table->string('hours');
+            $table->string('gambar');
+            $table->string('lat');
+            $table->string('long');
+            $table->integer('status');
+
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

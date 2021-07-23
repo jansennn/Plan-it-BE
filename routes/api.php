@@ -13,6 +13,9 @@ Route::group(['prefix' => 'user'], function (){
     //INISIASI
     Route::get('inisiasi', 'RutePerjalananController@inisiasi');
 
+    //MAKE PLAN
+    Route::post('plan/create', 'PlanController@makeplan');
+
     //test
     Route::post('testInisiasi', 'RutePerjalananController@inisiasi');
     Route::get('testMutation', 'RutePerjalananController@mutation');
