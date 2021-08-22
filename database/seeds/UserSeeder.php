@@ -40,6 +40,15 @@ class UserSeeder extends Seeder
                 'created_at' => Carbon::now('Asia/Jakarta'),
                 'updated_at' => Carbon::now('Asia/Jakarta')
             ],
+            [
+                'firstname' => 'planit',
+                'lastname' => 'planit',
+                'email' => 'planit@gmail.com',
+                'password' => bcrypt('planit'),
+                'role' => 1,
+                'created_at' => Carbon::now('Asia/Jakarta'),
+                'updated_at' => Carbon::now('Asia/Jakarta')
+            ],
         ]);
     }
 }

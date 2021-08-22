@@ -238,7 +238,6 @@ class RutePerjalananController extends Controller
             }
         }
 
-
         //mengisi kromosom kromosom ke dalam populasi
         for ($i = 0; $i < $count_kromosom; $i++) {
             //mengacak posisi destinasi destinasi
@@ -255,6 +254,7 @@ class RutePerjalananController extends Controller
                 }else {
                     $destination_awal = Destination::where('id', $destinations[$j])->first();
                     $jarak = $this->getDistanceBetweenPoints($this->lat, $this->long, $destination_awal->lat, $destination_awal->long);
+
                     if($jarak_terkecil>$jarak){
                         $jarak_terkecil = $jarak;
                         $idx_terdekat = $j;
@@ -266,17 +266,17 @@ class RutePerjalananController extends Controller
             $chromosome[0] = $chromosome[$idx_terdekat];
             $chromosome[$idx_terdekat] = $temp;
 
+
             //proses menampung kromosom, inisialisasi jarak tempuh, durasi perjalanan, rating, dan fitness
             $population[$i] = array();
             $population[$i]['chromosome'] = $chromosome;
             $population[$i]['distance'] = 0;
             $population[$i]['duration'] = 0;
             $population[$i]['rating'] = 0;
+            $population[$i]['penalty'] = 1;
             $population[$i]['fitness'] = 0;
         }
-
         //set populasi
-        return $population;
         $this->setPopulation($population);
 
         return $this->crossover($this->population, 0.2);
@@ -293,7 +293,6 @@ class RutePerjalananController extends Controller
         $mutation = $hasil_crossover;
 
         $total_mutation = ($this->count_kromosom * $this->mutation_rate) / 100;
-
 
         $idx = 0;
         while($idx < $total_mutation){
@@ -313,6 +312,61 @@ class RutePerjalananController extends Controller
             $idx++;
         }
         return $this->seleksi($mutation, $this->population, $destination_length);
+    }
+
+    public function cekPenalti($arr, $count_day){
+        $time = $this->time_start.":00";
+        for($i=0;$i<count($arr);$i++){
+
+            if($i == 0){
+                $lat_awal = $this->lat;
+                $long_awal = $this->long;
+                $des_akhir = Destination::where('id', $arr[$i])->first();
+                $lat_akhir = $des_akhir->lat;
+                $long_akhir = $des_akhir->long;
+                $opening_hours = strtotime($des_akhir->opening_hours.":00");
+                $closed_hours = strtotime($des_akhir->closed_hours.":00");
+
+                $s = $this->getDistanceBetweenPointsWithKilometer($lat_awal, $long_awal, $lat_akhir, $long_akhir);
+                $v = $this->speed_transport;
+                $t = $s/$v;
+                $jam =  $this->convertTime($t);
+                $time2 = [];
+                $time2[] = $time;
+                $time2[] = $jam;
+                $time =  $this->AddTime($time2);
+                if(strtotime($time) <= $opening_hours || strtotime($time) >= $closed_hours ){
+                    return 0;
+                }
+            }else if($i != 0 && $i != count($arr)) {
+
+                $des_awal = Destination::where('id', $arr[$i-1])->first();
+                $lat_awal = $des_awal->lat;
+                $long_awal = $des_awal->long;
+                $des_akhir = Destination::where('id', $arr[$i])->first();
+                $lat_akhir = $des_akhir->lat;
+                $long_akhir = $des_akhir->long;
+                $opening_hours = strtotime($des_akhir->opening_hours.":00");
+                $closed_hours = strtotime($des_akhir->closed_hours.":00");
+
+                $s = $this->getDistanceBetweenPointsWithKilometer($lat_awal, $long_awal, $lat_akhir, $long_akhir);
+                $v = $this->speed_transport;
+                $t = $s/$v;
+                $jam =  $this->convertTime($t);
+                $time2 = [];
+                $time2[] = $time;
+                $time2[] = $jam;
+                $time2[] = $this->hours_in_every_destination;
+                $time =  $this->AddTime($time2);
+                if(strtotime($time) <= $opening_hours || strtotime($time) >= $closed_hours ){
+                    return 0;
+                }
+                if(($i) %2 == 0 ){
+                    $time = "10:00";
+                }
+            }
+        }
+        return 1;
     }
 
     public function seleksi($mutation, $population, $destination_length){
@@ -348,6 +402,7 @@ class RutePerjalananController extends Controller
 
                     $jarak =  $this->getDistanceBetweenPoints($lat_awal, $long_awal, $lat_akhir, $long_akhir);
                     //return "jarak: ". $jarak . "awal: ".$destination_awal->name . "akhir: ".$destination_akhir->name;
+
                     $total_jarak = $total_jarak + (int)$jarak;
 
                     //menghitung rating
@@ -390,14 +445,18 @@ class RutePerjalananController extends Controller
             //hasil fitness
             $total_fitness = 1 / ($total_jarak + $duration + $total_rating);
 
+            //cek penalti
+            $cek = $this->cekPenalti($arr, $this->count_day+1);
+
+
             $arr_pop_mut[$index]['distance'] = (int)($total_jarak /1000);
             $arr_pop_mut[$index]['duration'] = (int)($duration / 60);
             $arr_pop_mut[$index]['rating'] =  $total_rating;
+            $arr_pop_mut[$index]['penalty'] =  $cek;
             $arr_pop_mut[$index]['fitness'] = $total_fitness;
             $index++;
 
         }
-
         //sorting array menjadi 100 array terbaik
         for($i = 1; $i < count($arr_pop_mut); $i++){
             for($j = $i; $j > 0; $j--){
@@ -408,10 +467,17 @@ class RutePerjalananController extends Controller
                 }
             }
         }
+
+        //menseleksi 20 kromosom terbaik dan penaltynya != 0
         $hasil = [];
-        for($i=0; $i< 20; $i++){
-            array_push($hasil, $arr_pop_mut[$i]);
+        $i = 0;
+        while($i != 20){
+            if($arr_pop_mut[$i]['penalty'] != 0){
+                array_push($hasil, $arr_pop_mut[$i]);
+                $i++;
+            }
         }
+
 
         //menset kromosom terbaik pada generasi 0
         if($this->generasi == 0){
@@ -511,7 +577,7 @@ class RutePerjalananController extends Controller
                     }
                 }
             }
-            return $count;
+            return "success make itenerary";
         }
 
         //jika belum 100 generasi maka akan kembali ke mutation
@@ -759,7 +825,7 @@ class RutePerjalananController extends Controller
 
 
     public function displayRutePerjalanan($id){
-        $data= RutePerjalanan::where('id', $id)->with('day.rute.destinasi.per_day')->first();
+        $data= RutePerjalanan::where('id', $id)->with('day.rute.destinasi.category')->first();
 
         return $data;
     }
