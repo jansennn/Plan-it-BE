@@ -239,7 +239,7 @@ class CreateRute extends Command
                         array_push($destinations, $d['id']);
                     }
                 }
-
+                echo "andreas";
                 //mengisi kromosom kromosom ke dalam populasi
                 for ($i = 0; $i < $count_kromosom; $i++) {
                     //mengacak posisi destinasi destinasi
@@ -498,7 +498,7 @@ class CreateRute extends Command
         $this->setPlusGenerasi();
 
         //jika sudah 100 generasi dan kromosom terbaik tidak berganti
-        if($this->generasi == 30){
+        if($this->generasi == 100){
             $jumlah_destinasi = count($this->kromosom_terbaik['chromosome']);
             $hasil_algoritma = $this->kromosom_terbaik['chromosome'];
 
@@ -525,7 +525,7 @@ class CreateRute extends Command
             //set plan status to 1
             $plan_data = Plan::find($this->plan_id);
             $plan_data->status = 1;
-            $plan_data->save();
+            $plan_data->delete();
 
             //save to table rute_perjalanan
             $temp_des = 0;
